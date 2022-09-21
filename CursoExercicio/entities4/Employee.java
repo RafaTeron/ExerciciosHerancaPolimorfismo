@@ -1,0 +1,73 @@
+package entities4;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class Employee {
+	
+	private String name;
+	private Integer hours;
+	private Double valuePerHour;
+	
+	public List<Employee> employees = new ArrayList<>();
+	
+	public Employee () {		
+	}
+
+	public Employee(String name, Integer hours, Double valuePerHour, List<Employee> employees) {
+		this.name = name;
+		this.hours = hours;
+		this.valuePerHour = valuePerHour;
+		this.employees = employees;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Integer getHours() {
+		return hours;
+	}
+
+	public void setHours(Integer hours) {
+		this.hours = hours;
+	}
+
+	public Double getValuePerHour() {
+		return valuePerHour;
+	}
+
+	public void setValuePerHour(Double valuePerHour) {
+		this.valuePerHour = valuePerHour;
+	}
+
+	public List<Employee> getEmployees() {
+		return employees;
+	}
+
+	public void addEmployee(Employee employee) {
+		employees.add(employee);
+	}
+	
+	public void removeEmployee(Employee employee) {
+		employees.remove(employee);
+	}
+	
+	public double payment() {
+		return hours * valuePerHour;
+	}
+
+	@Override
+	public String toString() {
+		return name + " - $ " + String.format("%.2f",payment());
+	}
+	
+	
+	
+
+}
